@@ -13,7 +13,7 @@ Features
     Fetching directories & Tree framework
     Automatic extraction of GET based URL's
     Automatic extraction of URL's that consumes user input
-    Automatic extraction of unique URL's that consumes user input (Field + Data)
+    Automatic extraction of URL's that consumes UNIQUE user input (Field + Data)
     
 Installation
     Clone this repository
