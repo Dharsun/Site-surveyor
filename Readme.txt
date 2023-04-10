@@ -12,7 +12,7 @@ Features
     Analizing JS files for sensitive data  
     Fetching directories & Tree framework
     Automatic extraction of GET based URL's
-    Automatic extraction of URL's that contains user input
+    Automatic extraction of URL's that consumes user input
     Automatic extraction of unique URL's that consumes user input (Field + Data)
     
 Installation
