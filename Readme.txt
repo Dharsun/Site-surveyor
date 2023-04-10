@@ -21,7 +21,7 @@ Installation
 
 bash
 
-git clone https://github.com/your-username/advanced-python3-web-crawler.git
+git clone https://github.com/Dharsun/Site-surveyor.git
 
 Install the required Python3 libraries and gf
 
