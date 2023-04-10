@@ -18,8 +18,6 @@ Features
 Installation
     Clone this repository
     git clone https://github.com/Dharsun/Site-surveyor.git
-
-Install the required Python3 libraries and gf
     chmod +x requirements.sh
     ./requirements.sh
 
