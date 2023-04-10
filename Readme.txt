@@ -16,22 +16,14 @@ Features
     Integrated with gf for better enumeration.
 
 Installation
-
     Clone this repository
-
-bash
-
-git clone https://github.com/Dharsun/Site-surveyor.git
+    git clone https://github.com/Dharsun/Site-surveyor.git
 
 Install the required Python3 libraries and gf
-
-chmod +x requirements.sh
-./requirements.sh
+    chmod +x requirements.sh
+    ./requirements.sh
 
 Usage
-
-    Run the web crawler using the following command:
-
     python3 Site_surveyor.py
 
     No need to wait for the Site-surveyor. Live results will be saved in the output+domain directory.
