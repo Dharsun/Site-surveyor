@@ -24,5 +24,6 @@ git clone https://github.com/Sherlock297/gf_patterns.git
 cd gf_patterns/
 cp *.json ~/.gf
 gf -list
+# Deleting unwanted files
 rm -r gf_patterns
 
