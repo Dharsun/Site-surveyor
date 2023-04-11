@@ -25,5 +25,6 @@ cd gf_patterns/
 cp *.json ~/.gf
 gf -list
 # Deleting unwanted files
+cd ../
 rm -r gf_patterns
 
