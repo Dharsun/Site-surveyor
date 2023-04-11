@@ -2,6 +2,9 @@
 
 #!/bin/bash
 
+apt-get install python3
+apt-get install pip
+
 # Install required Python3 modules
 pip3 install urllib3
 pip3 install beautifulsoup4
