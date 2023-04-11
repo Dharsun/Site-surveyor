@@ -2,8 +2,8 @@
 
 #!/bin/bash
 
-apt-get install python3
-apt-get install pip
+apt-get install python3 -y
+apt-get install pip -y
 
 # Install required Python3 modules
 pip3 install urllib3
