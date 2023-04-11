@@ -27,4 +27,3 @@ gf -list
 # Deleting unwanted files
 cd ../
 rm -r gf_patterns
-
