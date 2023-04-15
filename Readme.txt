@@ -7,6 +7,7 @@ Features
     Recursive crawling of web pages
     Multithreaded architecture for faster crawling
     Integrated with gf for better enumeration.
+    Integrated with nuclei for better scanning.
     Support for HTTP and SOCKS proxies
     Highly scalable design
     Analizing JS files for sensitive data  
