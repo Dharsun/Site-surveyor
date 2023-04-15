@@ -30,7 +30,9 @@ print(Fore.YELLOW + """   Output Files : If there is no files, Means crawler doe
    Fore.LIGHTCYAN_EX + """   L1-directories.txt """ + Style.RESET_ALL + """ = File contains only level=1 directories \n""" +
    Fore.LIGHTCYAN_EX + """   Injection-URLS.txt """ + Style.RESET_ALL + """= File contains URLS that consumes UNIQUE user inputs (field + value) \n""" +
    Fore.LIGHTCYAN_EX + """   URL_with_same_input_field.txt """ + Style.RESET_ALL + """= File contains all URLS that consumes user inputs \n""" +
-   Fore.LIGHTCYAN_EX + """   js.txt """ + Style.RESET_ALL + """= File contains all analyzed javascript, If JS contains sensitive data will be highlighted as RED """)
+   Fore.LIGHTCYAN_EX + """   js.txt """ + Style.RESET_ALL + """= File contains all analyzed javascript, If JS contains sensitive data will be highlighted as RED \n""" +
+   Fore.LIGHTCYAN_EX + """   Detailed-Nuclei-Report.txt""" + Style.RESET_ALL + """ = File contains entire nuclei logs \n""" +
+   Fore.LIGHTCYAN_EX + """   Nuclei-results.txt """ + Style.RESET_ALL + """= File contains required nuclei results """)
 print(Fore.GREEN + """╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 """ + Style.RESET_ALL)
 
@@ -513,9 +515,42 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
             if link not in printed_links:
                 print_js_url(url, link)
                 printed_links.add(link)
-
+                      
 print(Fore.GREEN + "Analyzing JS files Completed" + Style.RESET_ALL)
 print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+os.chdir('..')
+print(Fore.YELLOW + "Initiating Nuclei Scanning..." + Style.RESET_ALL)
+filepath = dirname + "/" + "links.txt"
+Targets = filepath
+headers = fileheader
+cmd = f"nuclei -H {headers} -l " + Targets + " -t nuclei-templates -silent"
+
+ND = "Nuclei"
+nupath = os.path.join(dirname, ND)
+os.makedirs(nupath)
+file_path1 = os.path.join(dirname, ND, "Detailed-Nuclei-Report.txt")
+file_path2 = os.path.join(dirname, ND, "Nuclei-results.txt")
+
+with subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=1, universal_newlines=True, shell=True) as p:
+    for line in p.stdout:
+        fd = open(file_path1, 'a')
+        txt = line + '\n'
+        fd.write(txt)
+        fd.close()
+        previous_lines = []
+        if any(word in line.lower() for word in ['critical', 'high', 'medium']):
+            if not any(prev_line in line for prev_line in previous_lines):
+                fd = open(file_path2, 'a')
+                txt = line + '\n'
+                fd.write(txt)
+                fd.close()
+                previous_lines.append(line)
+
+print(Fore.GREEN + "Nuclei Scan Completed..." + Style.RESET_ALL)
+print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+                      
+                      
+                      
 sender_email = "ddrish43@gmail.com"
 receiver_email = "youcanttextme@gmail.com"
 password = "sxdawwkugzpddpsv"
