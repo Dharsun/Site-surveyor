@@ -27,3 +27,5 @@ gf -list
 # Deleting unwanted files
 cd ../
 rm -r gf_patterns
+go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+git clone https://github.com/projectdiscovery/nuclei-templates.git
