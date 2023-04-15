@@ -491,7 +491,7 @@ def print_js_url(url, js_link):
             matches = re.findall(regex, file_contents)
             js = open("js.txt", 'a')
             if matches:
-                js.write(Fore.RED + f"Sensitive information found in {js_url}:\n")
+                js.write(Fore.RED + f"Sensitive information found in {js_url}:\n + Style.RESET_ALL")
                 js.write(str(matches) + "\n")
             else:
                 js.write(f"No sensitive information found in {js_url}\n")
