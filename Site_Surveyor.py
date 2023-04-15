@@ -515,7 +515,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
             if link not in printed_links:
                 print_js_url(url, link)
                 printed_links.add(link)
-                      
+
 print(Fore.GREEN + "Analyzing JS files Completed" + Style.RESET_ALL)
 print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
 os.chdir('..')
@@ -529,7 +529,8 @@ ND = "Nuclei"
 nupath = os.path.join(dirname, ND)
 os.makedirs(nupath)
 file_path1 = os.path.join(dirname, ND, "Detailed-Nuclei-Report.txt")
-file_path2 = os.path.join(dirname, ND, "Nuclei-results.txt")
+file_path2 = os.path.join(dirname, ND, ".tmp-Nuclei-results.txt")
+file_path3 = os.path.join(dirname, ND, "Nuclei-results.txt")
 
 with subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=1, universal_newlines=True, shell=True) as p:
     for line in p.stdout:
@@ -537,20 +538,27 @@ with subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=1, universal_newlines
         txt = line + '\n'
         fd.write(txt)
         fd.close()
-        previous_lines = []
-        if any(word in line.lower() for word in ['critical', 'high', 'medium']):
-            if not any(prev_line in line for prev_line in previous_lines):
-                fd = open(file_path2, 'a')
-                txt = line + '\n'
-                fd.write(txt)
-                fd.close()
-                previous_lines.append(line)
+        severities = ['critical', 'high', 'medium']
+        printed_lines = set()
+        with open(file_path1) as f:
+            for line in f:
+                if any(severity in line for severity in severities) and line not in printed_lines:
+                    printed_lines.add(line)
+                    fd = open(file_path2, 'a')
+                    txt = line + '\n'
+                    fd.write(txt)
+                    fd.close()
+                    with open(file_path2, 'r') as input_file:
+                        lines = input_file.readlines()
+                    lines = set(lines)
+                    with open(file_path3, 'w') as output_file:
+                        output_file.writelines(lines)
 
 print(Fore.GREEN + "Nuclei Scan Completed..." + Style.RESET_ALL)
 print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
-                      
-                      
-                      
+
+
+
 sender_email = "ddrish43@gmail.com"
 receiver_email = "youcanttextme@gmail.com"
 password = "sxdawwkugzpddpsv"
