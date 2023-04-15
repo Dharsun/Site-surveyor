@@ -6,8 +6,8 @@ Features
     Support for both HTTP and HTTPS protocols
     Recursive crawling of web pages
     Multithreaded architecture for faster crawling
-    Integrated with gf for better enumeration.
-    Integrated with nuclei for better scanning.
+    Integrated with gf with custom modules for better enumeration.
+    Integrated with nuclei with custom modules for better scanning.
     Support for HTTP and SOCKS proxies
     Highly scalable design
     Analizing JS files for sensitive data  
