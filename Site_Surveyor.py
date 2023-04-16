@@ -88,7 +88,7 @@ logging.basicConfig(
 )
 
 print()
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 print(Fore.YELLOW + "Crawling Started " + Style.RESET_ALL + "..." )
 print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + dirname + "/links.txt" + Style.RESET_ALL)
 
@@ -237,7 +237,7 @@ os.chdir('..')
 
 # current working directory is '/home/user'
 print(Fore.GREEN + "Crawling completed" + Style.RESET_ALL)
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 
 #crawling ends
 
@@ -316,7 +316,7 @@ else:
         print_tree(tree, file=outfile)
 
 print(Fore.GREEN + "Tree Conversion Completed" + Style.RESET_ALL)
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 print(Fore.YELLOW + "Initializing Directories " + Style.RESET_ALL + "...")
 print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + dirname + "/directories.txt" + Style.RESET_ALL)
 
@@ -359,7 +359,7 @@ for url in urls:
             fd.close()
 
 print(Fore.GREEN + "Directories Completed" + Style.RESET_ALL)
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 print(Fore.YELLOW + "Analyzing URLS for Injection attack " + Style.RESET_ALL + "...")
 print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + dirname + "/Injection-URLS.txt" + Style.RESET_ALL)
 print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + dirname + "/URL_with_same_input_field.txt" + Style.RESET_ALL)
@@ -440,7 +440,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     executor.map(identify_user_inputs, urls)
 
 print(Fore.GREEN + "Analyzing URLs for Injection Completed" + Style.RESET_ALL)
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 print(Fore.YELLOW + "Analyzing JS files for sensitive data " + Style.RESET_ALL + "...")
 print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + dirname + "/js.txt" + Style.RESET_ALL)
 
@@ -517,7 +517,7 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
                 printed_links.add(link)
 
 print(Fore.GREEN + "Analyzing JS files Completed" + Style.RESET_ALL)
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 os.chdir('..')
 print(Fore.YELLOW + "Initiating Nuclei Scanning..." + Style.RESET_ALL)
 
@@ -557,7 +557,7 @@ with subprocess.Popen(cmd, stdout=subprocess.PIPE, bufsize=1, universal_newlines
                         output_file.writelines(lines)
 
 print(Fore.GREEN + "Nuclei Scan Completed..." + Style.RESET_ALL)
-print(Fore.CYAN + "###########################################################" + Style.RESET_ALL)
+print(Fore.CYAN + "################################################################################" + Style.RESET_ALL)
 
 
 
