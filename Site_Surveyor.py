@@ -529,7 +529,7 @@ cmd = f"nuclei -H {headers} -l " + Targets + " -t nuclei-templates -silent"
 ND = "Nuclei"
 nupath = os.path.join(dirname, ND)
 os.makedirs(nupath)
-print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + nupath + Style.RESET_ALL)
+print("Live Outputs will be stored in " + Fore.LIGHTCYAN_EX + nupath + "/" + Style.RESET_ALL)
 file_path1 = os.path.join(dirname, ND, "Detailed-Nuclei-Report.txt")
 file_path2 = os.path.join(dirname, ND, ".tmp-Nuclei-results.txt")
 file_path3 = os.path.join(dirname, ND, "Nuclei-results.txt")
