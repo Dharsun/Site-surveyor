@@ -31,8 +31,8 @@ print(Fore.YELLOW + """   Output Files : If there is no files, Means crawler doe
    Fore.LIGHTCYAN_EX + """   Injection-URLS.txt """ + Style.RESET_ALL + """= File contains URLS that consumes UNIQUE user inputs (field + value) \n""" +
    Fore.LIGHTCYAN_EX + """   URL_with_same_input_field.txt """ + Style.RESET_ALL + """= File contains all URLS that consumes user inputs \n""" +
    Fore.LIGHTCYAN_EX + """   js.txt """ + Style.RESET_ALL + """= File contains all analyzed javascript, If JS contains sensitive data will be highlighted as RED \n""" +
-   Fore.LIGHTCYAN_EX + """   Detailed-Nuclei-Report.txt""" + Style.RESET_ALL + """ = File contains entire nuclei logs \n""" +
-   Fore.LIGHTCYAN_EX + """   Nuclei-results.txt """ + Style.RESET_ALL + """= File contains required nuclei results """)
+   Fore.LIGHTCYAN_EX + """   Detailed-Nuclei-Report.txt""" + Style.RESET_ALL + """ = File contains entire nuclei logs (Under nuclei/ directory) \n""" +
+   Fore.LIGHTCYAN_EX + """   Nuclei-results.txt """ + Style.RESET_ALL + """= File contains required nuclei results (Under nuclei/ directory) """)
 print(Fore.GREEN + """╚════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 """ + Style.RESET_ALL)
 
