@@ -28,4 +28,5 @@ gf -list
 cd ../
 rm -r gf_patterns
 go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+apt install nuclei -y
 git clone https://github.com/projectdiscovery/nuclei-templates.git
